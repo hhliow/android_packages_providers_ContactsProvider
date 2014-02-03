@@ -409,7 +409,7 @@ public class ContactLocaleUtils {
         mLanguage = mLocale.getLanguage().toLowerCase();
         if (mLanguage.equals(JAPANESE_LANGUAGE)) {
             mUtils = new JapaneseContactUtils(mLocale);
-        } else if (mLocale.equals(Locale.CHINA)) {
+        } else if (mLocale.equals(Locale.CHINA) || mLanguage.equals(CHINESE_LANGUAGE)) { // enables Pinyin contact search for non-China locale users
             mUtils = new SimplifiedChineseContactUtils(mLocale);
         } else {
             mUtils = new ContactLocaleUtilsBase(mLocale);
